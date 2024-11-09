@@ -198,7 +198,7 @@ const Contact = () => {
 
                         <button
                             type="submit"
-                            className="px-10 py-2 mt-2 font-semibold rounded my-1 inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                            className="px-10 py-2 mt-5 font-semibold rounded my-1 inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
                             disabled={processing}
                         >
                             {processing ? `Sending...` : "Send"}
