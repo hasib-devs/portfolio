@@ -22,7 +22,11 @@ const DefaultLayout: FC<Props> = ({ children }) => {
                 })}
             >
                 {/* Sidebar */}
-                <SidebarDrawer />
+                <SidebarDrawer
+                    toggleDarkMode={toggleDarkMode}
+                    isDarkMode={isDarkMode}
+                    isSidebarOpen={isSidebarOpen}
+                />
 
                 {/* Overlay */}
                 {isSidebarOpen && (

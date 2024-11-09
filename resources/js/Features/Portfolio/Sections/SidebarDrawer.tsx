@@ -1,9 +1,39 @@
-const SidebarDrawer = () => {
+import { classNames } from "@/Utils";
+import { Link } from "@inertiajs/react";
+import { FC } from "react";
+import {
+    FaGithub,
+    FaFacebookF,
+    FaTwitter,
+    FaStackOverflow,
+    FaUser,
+    FaFileAlt,
+    FaLaptopCode,
+    FaBlog,
+    FaEnvelope,
+    FaAdjust,
+} from "react-icons/fa";
+
+type Props = {
+    isSidebarOpen: boolean;
+    isDarkMode: boolean;
+    toggleDarkMode: () => void;
+};
+
+const SidebarDrawer: FC<Props> = ({
+    isSidebarOpen,
+    isDarkMode,
+    toggleDarkMode,
+}) => {
     return (
         <header
             id="sidebar_header"
-            className="lg:relative lg:translate-x-0 absolute transform custom-scrollbar "
-            // :class="{ '-translate-x-full': !isSidebarOpen }"
+            className={classNames(
+                "lg:relative lg:translate-x-0 absolute transform custom-scrollbar",
+                {
+                    "-translate-x-full": !isSidebarOpen,
+                }
+            )}
         >
             <div className="">
                 <h3 className="text-2xl text-center mt-2 mb-6 font-bold tracking-wide">
@@ -27,7 +57,7 @@ const SidebarDrawer = () => {
                         target="_blank"
                         className="social-icon"
                     >
-                        {/* <font-awesome-icon :icon="['fab', 'twitter']"></font-awesome-icon> */}
+                        <FaTwitter />
                     </a>
 
                     <a
@@ -35,15 +65,15 @@ const SidebarDrawer = () => {
                         target="_blank"
                         className="social-icon"
                     >
-                        {/* <font-awesome-icon :icon="['fab', 'facebook-f']"></font-awesome-icon> */}
+                        <FaFacebookF />
                     </a>
 
                     <a
-                        href="https://github.com/hasibDev"
+                        href="https://github.com/hasib-devs"
                         target="_blank"
                         className="social-icon"
                     >
-                        {/* <font-awesome-icon :icon="['fab', 'github-alt']"></font-awesome-icon> */}
+                        <FaGithub />
                     </a>
 
                     <a
@@ -51,9 +81,7 @@ const SidebarDrawer = () => {
                         target="_blank"
                         className="social-icon"
                     >
-                        {/* <font-awesome-icon
-            :icon="['fab', 'stack-overflow']"
-          ></font-awesome-icon> */}
+                        <FaStackOverflow />
                     </a>
                 </div>
             </div>
@@ -61,27 +89,93 @@ const SidebarDrawer = () => {
             <div className="border-b border-gray-400 w-11/12 my-5"></div>
 
             <nav className="flex flex-col text-gray-100">
-                {/* <nuxt-link
-        to="/"
-        class="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
-      >
-        <span className="inline-block w-8 text-center">
-          <font-awesome-icon :icon="['fas', 'user']"></font-awesome-icon>
-        </span>
-        <span className="text-md font-semibold">About Me</span>
-      </nuxt-link> */}
-                {/* <nuxt-link
-        to="/portfolio"
-        class="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
-      >
-        <span className="inline-block w-8 text-center">
-          <font-awesome-icon :icon="['fas', 'laptop-code']"></font-awesome-icon>
-        </span>
-        <span className="text-md font-semibold">Portfolio</span>
-      </nuxt-link> */}
+                <Link
+                    href="/"
+                    className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
+                >
+                    <span className="inline-block w-8 text-center">
+                        <FaUser />
+                    </span>
+                    <span className="text-md font-semibold">About Me</span>
+                </Link>
+
+                <Link
+                    href="/"
+                    className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
+                >
+                    <span className="inline-block w-8 text-center">
+                        <FaLaptopCode />
+                    </span>
+                    <span className="text-md font-semibold">Portfolio</span>
+                </Link>
+
+                <Link
+                    href="/"
+                    className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
+                >
+                    <span className="inline-block w-8 text-center">
+                        <FaFileAlt />
+                    </span>
+                    <span className="text-md font-semibold">Resume</span>
+                </Link>
+
+                <Link
+                    href="/"
+                    className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
+                >
+                    <span className="inline-block w-8 text-center">
+                        <FaBlog />
+                    </span>
+                    <span className="text-md font-semibold">Blog</span>
+                </Link>
+
+                <Link
+                    href="/"
+                    className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
+                >
+                    <span className="inline-block w-8 text-center">
+                        <FaEnvelope />
+                    </span>
+                    <span className="text-md font-semibold">Contact</span>
+                </Link>
             </nav>
 
             <div className="border-b border-gray-400 w-11/12 my-5"></div>
+
+            {/* Dark Mode */}
+            <div>
+                <div className="flex gap-1 items-center">
+                    <FaAdjust />
+                    <span className="text-md font-semibold">
+                        {isDarkMode ? "Light" : "Dark"} Mode
+                    </span>
+                </div>
+
+                {/* <!-- Toggled switch --> */}
+                <div className="flex justify-center items-center mt-4 cursor-pointer">
+                    {/* <!-- Switch Container --> */}
+                    <div
+                        onClick={toggleDarkMode}
+                        className={classNames(
+                            "w-14 h-7 flex items-center rounded-full mx-3 px-1",
+                            {
+                                "bg-primary": isDarkMode,
+                                "bg-navy": !isDarkMode,
+                            }
+                        )}
+                    >
+                        {/* <!-- Switch --> */}
+                        <div
+                            className={classNames(
+                                "bg-white w-5 h-5 rounded-full shadow-md transform transition-transform duration-300",
+                                {
+                                    "translate-x-7": isDarkMode,
+                                }
+                            )}
+                        ></div>
+                    </div>
+                </div>
+            </div>
         </header>
     );
 };

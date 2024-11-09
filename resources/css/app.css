@@ -78,3 +78,8 @@
 .c-python {
     color: #456E9C;
 }
+
+
+#sidebar_header .social-icon {
+    @apply p-2 flex justify-center items-center mx-1 text-lg bg-gray-200 rounded-full w-10 h-10 inline-block text-green-600 text-center hover:text-green-800 transition-colors duration-300;
+}
