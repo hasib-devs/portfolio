@@ -7,8 +7,8 @@ import { FaFacebookF, FaStackOverflow, FaTwitter } from "react-icons/fa6";
 
 const Contact = () => {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "test@hasib.dev",
-        name: "Hasib",
+        email: "test@mail.dev",
+        name: "John Doe",
         message: "Hello World",
     });
 

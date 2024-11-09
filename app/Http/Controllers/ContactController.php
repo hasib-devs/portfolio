@@ -16,8 +16,11 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-
-        Mail::to(config('mail.from.address'))->send(new ContactMail());
+        Mail::to(config('mail.from.address'))->send(new ContactMail([
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ]));
         return Inertia::render("Contact");
     }
 }
