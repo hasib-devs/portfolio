@@ -1,5 +1,6 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
+import { classNames } from "@/Utils";
 import { Head, useForm } from "@inertiajs/react";
 import { FormEventHandler, ReactNode } from "react";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -118,37 +119,68 @@ const Contact = () => {
                     <h3 className="text-2xl mb-6 text-center">Get In Touch</h3>
                     <form onSubmit={submit} className="lg:w-3/5 mx-auto">
                         <div className="grid grid-cols-2 gap-4">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                className="px-3 py-2 rounded border border-gray-400"
-                                required
-                                autoFocus
-                                value={data.name}
-                                onChange={(e) =>
-                                    setData("name", e.target.value)
-                                }
-                            />
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                className="px-3 py-2 rounded border border-gray-400"
-                                required
-                                value={data.email}
-                                onChange={(e) =>
-                                    setData("email", e.target.value)
-                                }
-                            />
+                            <div>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    className={classNames(
+                                        "px-3 py-2 rounded w-full border border-gray-400",
+                                        {
+                                            "border-red-500": errors.name,
+                                        }
+                                    )}
+                                    required
+                                    autoFocus
+                                    value={data.name}
+                                    onChange={(e) =>
+                                        setData("name", e.target.value)
+                                    }
+                                />
+
+                                {errors.name && (
+                                    <p className="text-red-500 text-sm col-span-2 mt-1">
+                                        {errors.name}
+                                    </p>
+                                )}
+                            </div>
+                            <div>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    className={classNames(
+                                        "px-3 py-2 rounded border w-full border-gray-400",
+                                        {
+                                            "border-red-500": errors.email,
+                                        }
+                                    )}
+                                    required
+                                    value={data.email}
+                                    onChange={(e) =>
+                                        setData("email", e.target.value)
+                                    }
+                                />
+
+                                {errors.email && (
+                                    <p className="text-red-500 text-sm col-span-2 mt-1">
+                                        {errors.email}
+                                    </p>
+                                )}
+                            </div>
                         </div>
 
-                        <div className="mt-5">
+                        <div className="mt-5 flex flex-col">
                             <textarea
                                 name="message"
                                 cols={30}
                                 rows={10}
-                                className="w-full px-3 py-2 rounded border border-gray-400"
+                                className={classNames(
+                                    "px-3 py-2 rounded border w-full border-gray-400",
+                                    {
+                                        "border-red-500": errors.message,
+                                    }
+                                )}
                                 placeholder="Enter Your message"
                                 required
                                 value={data.message}
@@ -156,11 +188,17 @@ const Contact = () => {
                                     setData("message", e.target.value)
                                 }
                             ></textarea>
+
+                            {errors.message && (
+                                <p className="text-red-500 text-sm mt-1">
+                                    {errors.message}
+                                </p>
+                            )}
                         </div>
 
                         <button
                             type="submit"
-                            className="px-10 py-2 font-semibold rounded my-1 inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                            className="px-10 py-2 mt-2 font-semibold rounded my-1 inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
                             disabled={processing}
                         >
                             {processing ? `Sending...` : "Send"}
