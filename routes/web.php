@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,7 @@ Route::get("/blog", function () {
     return Inertia::render("Blog");
 });
 
-Route::get("/contact", function () {
-    return Inertia::render("Contact");
-});
+Route::resource("/contact", ContactController::class);
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [

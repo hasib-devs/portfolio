@@ -1,11 +1,25 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
-import { Head } from "@inertiajs/react";
-import { ReactNode } from "react";
+import { Head, useForm } from "@inertiajs/react";
+import { FormEventHandler, ReactNode } from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF, FaStackOverflow, FaTwitter } from "react-icons/fa6";
 
 const Contact = () => {
+    const { data, setData, post, processing, errors, reset } = useForm({
+        email: "test@hasib.dev",
+        name: "Hasib",
+        message: "Hello World",
+    });
+
+    const submit: FormEventHandler = (e) => {
+        e.preventDefault();
+
+        post(route("contact.store"), {
+            onFinish: () => reset("message"),
+        });
+    };
+
     return (
         <>
             <Head>
@@ -74,7 +88,7 @@ const Contact = () => {
                 {/* <!-- Main content --> */}
                 <div className="p-10">
                     <h3 className="text-2xl mb-6 text-center">Get In Touch</h3>
-                    <form className="lg:w-3/5 mx-auto">
+                    <form onSubmit={submit} className="lg:w-3/5 mx-auto">
                         <div className="grid grid-cols-2 gap-4">
                             <input
                                 type="text"
@@ -82,6 +96,11 @@ const Contact = () => {
                                 placeholder="Name"
                                 className="px-3 py-2 rounded border border-gray-400"
                                 required
+                                autoFocus
+                                value={data.name}
+                                onChange={(e) =>
+                                    setData("name", e.target.value)
+                                }
                             />
                             <input
                                 type="email"
@@ -89,6 +108,10 @@ const Contact = () => {
                                 placeholder="Email"
                                 className="px-3 py-2 rounded border border-gray-400"
                                 required
+                                value={data.email}
+                                onChange={(e) =>
+                                    setData("email", e.target.value)
+                                }
                             />
                         </div>
 
@@ -100,6 +123,10 @@ const Contact = () => {
                                 className="w-full px-3 py-2 rounded border border-gray-400"
                                 placeholder="Enter Your message"
                                 required
+                                value={data.message}
+                                onChange={(e) =>
+                                    setData("message", e.target.value)
+                                }
                             ></textarea>
                         </div>
 
