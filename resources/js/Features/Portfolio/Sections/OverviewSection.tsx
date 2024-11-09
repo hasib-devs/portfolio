@@ -1,4 +1,21 @@
+import FlutterIcon from "@/Icons/FlutterIcon";
+import GulpIcon from "@/Icons/GulpIcon";
+import ScssIcon from "@/Icons/ScssIcon";
+import WebpackIcon from "@/Icons/WebpackIcon";
 import React from "react";
+import {
+    FaCss3,
+    FaGit,
+    FaGitAlt,
+    FaHtml5,
+    FaJs,
+    FaLaravel,
+    FaNodeJs,
+    FaNpm,
+    FaPhp,
+    FaReact,
+    FaVuejs,
+} from "react-icons/fa6";
 
 const OverviewSection = () => {
     return (
@@ -13,7 +30,9 @@ const OverviewSection = () => {
             <div className="mt-10">
                 <div className="grid  xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-6">
                     <div className="">
-                        {/* <js-icon class="text-3xl text-yellow-300"></js-icon> */}
+                        <div className="flex items-center gap-2">
+                            <FaJs className="text-3xl text-[#f7df1e]" />
+                        </div>
                         <h4 className="text-lg my-3 font-semibold">
                             JavaScript
                         </h4>
@@ -28,8 +47,10 @@ const OverviewSection = () => {
                         </p>
                     </div>
                     <div className="">
-                        {/* <react-icon class="text-3xl c-react"></react-icon>
-                <vue-icon class="text-3xl c-vue ml-1"></vue-icon> */}
+                        <div className="flex items-center gap-2">
+                            <FaReact className="text-3xl text-[#62d4fa]" />
+                            <FaVuejs className="text-3xl text-[#41b883]" />
+                        </div>
 
                         <h4 className="text-lg my-3 font-semibold">
                             React &amp; Vue
@@ -43,7 +64,9 @@ const OverviewSection = () => {
                         </p>
                     </div>
                     <div className="">
-                        {/* <node-icon class="text-3xl c-node"></node-icon> */}
+                        <div className="flex items-center gap-2">
+                            <FaNodeJs className="text-3xl text-[#3c873a]" />
+                        </div>
                         <h4 className="text-lg my-3 font-semibold">Node JS</h4>
                         <p>
                             Now, this is the point where Javascript achieves
@@ -56,9 +79,11 @@ const OverviewSection = () => {
                     </div>
                     <div className="">
                         <div className="flex items-center">
-                            {/* <npm-icon class="text-3xl c-npm"></npm-icon>
-                    <webpack-icon class="text-3xl mx-1"></webpack-icon>
-                    <gulp-icon class="text-3xl c-gulp"></gulp-icon> */}
+                            <div className="flex items-center gap-2">
+                                <FaNpm className="text-3xl text-[#cb3837]" />
+                                <WebpackIcon className="text-3xl" />
+                                <GulpIcon className="w-4 text-[#cf4647]" />
+                            </div>
                         </div>
                         <h4 className="text-lg my-3 font-semibold">
                             Npm, Webpack &amp; Gulp
@@ -72,9 +97,9 @@ const OverviewSection = () => {
                         </p>
                     </div>
                     <div className="">
-                        <div className="flex items-center">
-                            {/* <php-icon class="text-3xl c-php"></php-icon>
-                    <laravel-icon class="text-3xl c-laravel ml-3"></laravel-icon> */}
+                        <div className="flex items-center gap-2">
+                            <FaPhp className="text-3xl text-[#8892be]" />
+                            <FaLaravel className="text-3xl text-[#ff2d20]" />
                         </div>
                         <h4 className="text-lg my-3 font-semibold">
                             PHP &amp; Laravel
@@ -89,10 +114,10 @@ const OverviewSection = () => {
                         </p>
                     </div>
                     <div className="">
-                        <div className="flex items-center">
-                            {/* <html-icon class="text-3xl c-html"></html-icon>
-                    <css-icon class="text-3xl c-css mx-2"></css-icon>
-                    <scss-icon class="text-3xl c-scss"></scss-icon> */}
+                        <div className="flex items-center gap-2">
+                            <FaHtml5 className="text-3xl text-[#e34f26]" />
+                            <FaCss3 className="text-3xl text-[#264de4]" />
+                            <ScssIcon className="w-10" />
                         </div>
                         <h4 className="text-lg my-3 font-semibold">
                             HTML, CSS &amp; SCSS
@@ -106,7 +131,7 @@ const OverviewSection = () => {
                         </p>
                     </div>
                     <div className="">
-                        {/* <flutter-icon></flutter-icon> */}
+                        <FlutterIcon className="w-8" />
                         <h4 className="text-lg my-3 font-semibold">
                             Mobile Apps
                         </h4>
@@ -117,7 +142,7 @@ const OverviewSection = () => {
                         </p>
                     </div>
                     <div className="">
-                        {/* <font-awesome-icon class="text-4xl text-red-500" :icon="['fab', 'git-alt']"></font-awesome-icon> */}
+                        <FaGitAlt className="text-3xl text-[#f34f29]" />
                         <h4 className="text-lg my-3 font-semibold">
                             Git, Github &amp; Gitlab
                         </h4>
