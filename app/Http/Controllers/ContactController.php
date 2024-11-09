@@ -18,16 +18,10 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request): RedirectResponse
     {
-        // $validated = $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'email', 'max:255'],
-        //     'message' => ['required', 'string'],
-        // ]);
-
-        Mail::to(config('mail.from.address'))->queue(new ContactMail([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'message' => $request['message'],
+        Mail::to(config('mail.from.address'))->send(new ContactMail([
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
         ]));
         return to_route('contact.index')->with('success', 'Message sent successfully!');
     }
