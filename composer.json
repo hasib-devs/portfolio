@@ -1,8 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "hasib-devs/portfolio",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Portfolio website for Hasibur Rahman",
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
