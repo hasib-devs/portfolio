@@ -71,7 +71,7 @@
             <p>You have received a new message from the contact form on your website.</p>
             <p><strong>Name:</strong> {{ $data['name'] }}</p>
             <p>
-                <a href="mailto:{{ $data['email'] }}"><strong>Email:</strong> {{ $data['email'] }}</a>
+                <strong>Email:</strong> <a href="mailto:{{ $data['email'] }}"> {{ $data['email'] }}</a>
             </p>
             <p><strong>Message:</strong></p>
             <p>{{ $data['message'] }}</p>
