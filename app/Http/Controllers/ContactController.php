@@ -21,6 +21,6 @@ class ContactController extends Controller
             'email' => $request->email,
             'message' => $request->message,
         ]));
-        return Inertia::render("Contact");
+        return to_route('contact.index')->with('success', 'Message sent successfully!');
     }
 }

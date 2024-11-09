@@ -4,19 +4,48 @@ import { Head, useForm } from "@inertiajs/react";
 import { FormEventHandler, ReactNode } from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF, FaStackOverflow, FaTwitter } from "react-icons/fa6";
+import { toast, Flip } from "react-toastify";
 
 const Contact = () => {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "test@mail.dev",
-        name: "John Doe",
-        message: "Hello World",
+        email: "",
+        name: "",
+        message: "",
     });
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
 
+        const toastId = toast.loading("Sending message...", {
+            position: "bottom-right",
+            closeButton: true,
+            draggable: true,
+            hideProgressBar: true,
+            transition: Flip,
+        });
         post(route("contact.store"), {
-            onFinish: () => reset("message"),
+            onSuccess: () => {
+                toast.update(toastId, {
+                    render: "Thank you for your message. I will get back to you soon.",
+                    type: "success",
+                    isLoading: false,
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    transition: Flip,
+                });
+                reset("message");
+            },
+            onError: (errors) => {
+                console.log(errors);
+                toast.update(toastId, {
+                    render: "Failed to send message. Please try again.",
+                    type: "error",
+                    isLoading: false,
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    transition: Flip,
+                });
+            },
         });
     };
 
@@ -34,7 +63,7 @@ const Contact = () => {
                         <p className="my-3">
                             Interested in hiring me for your project or just
                             want to say hi? You can fill in the contact form
-                            below <br /> or send me an email to{" "}
+                            below <br /> or 'send' me an email to{" "}
                             <a
                                 href="mailto:info@hasib.dev"
                                 className="text-primary font-semibold"
@@ -133,8 +162,9 @@ const Contact = () => {
                         <button
                             type="submit"
                             className="px-10 py-2 font-semibold rounded my-1 inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                            disabled={processing}
                         >
-                            Send
+                            {processing ? `Sending...` : "Send"}
                         </button>
                     </form>
                 </div>
