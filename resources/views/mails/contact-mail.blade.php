@@ -70,7 +70,9 @@
             <h2>Hello, Hasib</h2>
             <p>You have received a new message from the contact form on your website.</p>
             <p><strong>Name:</strong> {{ $data['name'] }}</p>
-            <p><strong>Email:</strong> {{ $data['email'] }}</p>
+            <p>
+                <a href="mailto:{{ $data['email'] }}"><strong>Email:</strong> {{ $data['email'] }}</a>
+            </p>
             <p><strong>Message:</strong></p>
             <p>{{ $data['message'] }}</p>
             <p style="margin-top: 20px;">Thank you for your attention.</p>
