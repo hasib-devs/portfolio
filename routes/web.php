@@ -9,6 +9,18 @@ Route::get("/", function () {
     return Inertia::render("Home");
 });
 
+Route::get("/resume", function () {
+    return Inertia::render("Resume");
+});
+
+Route::get("/blog", function () {
+    return Inertia::render("Blog");
+});
+
+Route::get("/contact", function () {
+    return Inertia::render("Contact");
+});
+
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),

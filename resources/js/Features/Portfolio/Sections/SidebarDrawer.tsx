@@ -94,18 +94,18 @@ const SidebarDrawer: FC<Props> = ({}) => {
                     <span className="text-md font-semibold">About Me</span>
                 </Link>
 
-                <Link
-                    href="/"
+                {/* <Link
+                    href="/portfolio"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">
                         <FaLaptopCode />
                     </span>
                     <span className="text-md font-semibold">Portfolio</span>
-                </Link>
+                </Link> */}
 
                 <Link
-                    href="/"
+                    href="/resume"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">
@@ -115,7 +115,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
                 </Link>
 
                 <Link
-                    href="/"
+                    href="/blog"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">
@@ -125,7 +125,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
                 </Link>
 
                 <Link
-                    href="/"
+                    href="/contact"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">

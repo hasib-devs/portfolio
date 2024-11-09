@@ -36,6 +36,36 @@
   "resources/js/Components/TextInput.tsx": [
     "/build/assets/TextInput-CfTqIySL.js"
   ],
+  "resources/js/Features/Portfolio/Contexts/portfolio-context.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Features/Portfolio/Hooks/contexts.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Features/Portfolio/Layouts/DefaultLayout.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Features/Portfolio/Sections/AboutSection.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Features/Portfolio/Sections/OverviewSection.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Features/Portfolio/Sections/SidebarDrawer.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Icons/FlutterIcon.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Icons/GulpIcon.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Icons/ScssIcon.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
+  "resources/js/Icons/WebpackIcon.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
   "resources/js/Layouts/AuthenticatedLayout.tsx": [
     "/build/assets/AuthenticatedLayout-CRwQkLog.js"
   ],
@@ -63,6 +93,9 @@
   "resources/js/Pages/Dashboard.tsx": [
     "/build/assets/Dashboard-CYbmP5BT.js"
   ],
+  "resources/js/Pages/Home.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
+  ],
   "resources/js/Pages/Profile/Edit.tsx": [
     "/build/assets/Edit-DcieHa-C.js"
   ],
@@ -77,6 +110,9 @@
   ],
   "resources/js/Pages/Welcome.tsx": [
     "/build/assets/Welcome-By_mvvLX.js"
+  ],
+  "resources/js/Utils/index.tsx": [
+    "/build/assets/Home-D7TezFZx.js"
   ],
   "resources/js/ssr.tsx": [],
   "vendor/tightenco/ziggy/dist/index.js": []
