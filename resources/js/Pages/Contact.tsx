@@ -1,12 +1,8 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
 import { ReactNode } from "react";
-import {
-    FaFacebookF,
-    FaGithubAlt,
-    FaStackOverflow,
-    FaTwitter,
-} from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaStackOverflow, FaTwitter } from "react-icons/fa6";
 
 const Contact = () => {
     return (
@@ -18,7 +14,13 @@ const Contact = () => {
                     <p className="my-3">
                         Interested in hiring me for your project or just want to
                         say hi? You can fill in the contact form below <br /> or
-                        send me an email to hasib.active@gmail.com
+                        send me an email to{" "}
+                        <a
+                            href="mailto:info@hasib.dev"
+                            className="text-primary font-semibold"
+                        >
+                            info@hasib.dev
+                        </a>
                     </p>
 
                     <p>
@@ -46,11 +48,11 @@ const Contact = () => {
                     </a>
 
                     <a
-                        href="https://github.com/hasibDev"
+                        href="https://www.linkedin.com/in/hasibur"
                         target="_blank"
                         className="social-icon"
                     >
-                        <FaGithubAlt />
+                        <FaLinkedinIn />
                     </a>
 
                     <a
