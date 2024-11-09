@@ -18,7 +18,7 @@ Route::get("/blog", function () {
     return Inertia::render("Blog");
 });
 
-Route::resource("/contact", ContactController::class);
+Route::resource("/contact", ContactController::class)->only(["index", "store"]);
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -39,4 +39,5 @@ Route::resource("/contact", ContactController::class);
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';
+require __DIR__ . '/api.php';

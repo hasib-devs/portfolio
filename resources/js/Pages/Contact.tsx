@@ -36,7 +36,6 @@ const Contact = () => {
                 reset("message");
             },
             onError: (errors) => {
-                console.log(errors);
                 toast.update(toastId, {
                     render: "Failed to send message. Please try again.",
                     type: "error",
