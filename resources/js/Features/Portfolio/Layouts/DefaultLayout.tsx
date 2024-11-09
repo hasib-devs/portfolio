@@ -1,19 +1,14 @@
 import { classNames } from "@/Utils";
 import React, { FC, useState } from "react";
 import SidebarDrawer from "../Sections/SidebarDrawer";
+import { usePortfolio } from "../Hooks/contexts";
 
 type Props = {
     children: React.ReactNode;
 };
 
 const DefaultLayout: FC<Props> = ({ children }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-    function toggleDarkMode() {
-        setIsDarkMode(!isDarkMode);
-        localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
-    }
+    const { isDarkMode, isSidebarOpen, setIsSidebarOpen } = usePortfolio();
     return (
         <>
             <div
@@ -22,11 +17,7 @@ const DefaultLayout: FC<Props> = ({ children }) => {
                 })}
             >
                 {/* Sidebar */}
-                <SidebarDrawer
-                    toggleDarkMode={toggleDarkMode}
-                    isDarkMode={isDarkMode}
-                    isSidebarOpen={isSidebarOpen}
-                />
+                <SidebarDrawer />
 
                 {/* Overlay */}
                 {isSidebarOpen && (

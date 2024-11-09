@@ -13,18 +13,13 @@ import {
     FaEnvelope,
     FaAdjust,
 } from "react-icons/fa";
+import { usePortfolio } from "../Hooks/contexts";
 
-type Props = {
-    isSidebarOpen: boolean;
-    isDarkMode: boolean;
-    toggleDarkMode: () => void;
-};
+type Props = {};
 
-const SidebarDrawer: FC<Props> = ({
-    isSidebarOpen,
-    isDarkMode,
-    toggleDarkMode,
-}) => {
+const SidebarDrawer: FC<Props> = ({}) => {
+    const { isDarkMode, isSidebarOpen, setIsSidebarOpen, toggleDarkMode } =
+        usePortfolio();
     return (
         <header
             id="sidebar_header"
@@ -36,7 +31,7 @@ const SidebarDrawer: FC<Props> = ({
             )}
         >
             <div className="">
-                <h3 className="text-2xl text-center mt-2 mb-6 font-bold tracking-wide">
+                <h3 className="text-2xl text-center mt-2 mb-6 font-extrabold tracking-wide">
                     Hasib
                 </h3>
 
@@ -45,10 +40,10 @@ const SidebarDrawer: FC<Props> = ({
                 </div>
 
                 <p className="text-center mt-6">
-                    I am a professional full-stack web developer since 2018. I
+                    I am a professional full-stack web developer since 2017. I
                     can design and develop any type of website, web-based
-                    application using backend Node JS and frontend VueJS or
-                    ReactJS.
+                    application using backend <strong>Node JS</strong> and
+                    frontend <strong>VueJS</strong> or <strong>ReactJS</strong>.
                 </p>
 
                 <div className="flex justify-center items-center my-4">
