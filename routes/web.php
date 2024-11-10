@@ -1,12 +1,7 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 
 Route::get("/", function () {
@@ -18,6 +13,7 @@ Route::group(["prefix" => "portfolio"], function () {
     Route::get("/resume", [PortfolioController::class, "resume"])->name("portfolio.resume");
     Route::get("/blog", [PortfolioController::class, "blog"])->name("portfolio.blog");
     Route::get("/contact", [PortfolioController::class, "contact"])->name("portfolio.contact");
+    Route::post("/contact", [PortfolioController::class, "sendContact"])->name("portfolio.sendContact");
 });
 
 // Route::resource("/portfolio", PortfolioController::class)->only(["index"]);

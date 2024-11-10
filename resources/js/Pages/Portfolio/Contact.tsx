@@ -24,7 +24,7 @@ const Contact = () => {
             hideProgressBar: true,
             transition: Flip,
         });
-        post(route("contact.store"), {
+        post(route("portfolio.sendContact"), {
             onSuccess: () => {
                 toast.update(toastId, {
                     render: "Thank you for your message. I will get back to you soon.",
