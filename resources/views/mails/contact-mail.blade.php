@@ -58,6 +58,14 @@
             font-size: 14px;
             color: #666666;
         }
+
+        .message-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #007bff;
+        }
     </style>
 </head>
 
@@ -69,12 +77,22 @@
         <div class="content">
             <h2>Hello, Hasib</h2>
             <p>You have received a new message from the contact form on your website.</p>
-            <p><strong>Name:</strong> {{ $data['name'] }}</p>
+            {{-- <p><strong>Name:</strong> {{ $data['name'] }}</p>
             <p>
                 <strong>Email:</strong> <a href="mailto:{{ $data['email'] }}"> {{ $data['email'] }}</a>
             </p>
             <p><strong>Message:</strong></p>
-            <p>{{ $data['message'] }}</p>
+            <p>{{ $data['message'] }}</p> --}}
+
+            <div class="message-box">
+                <h3>Message Details:</h3>
+                <p><strong>Name:</strong> {{ $data['name'] }}</p>
+                <p><strong>Email:</strong> <a href="mailto:{{ $data['email'] }}"> {{ $data['email'] }}</a></p>
+                <p><strong>Message:</strong></p>
+                <p style="font-style: italic;">{{ $data['message'] }}</p>
+            </div>
+
+
             <p style="margin-top: 20px;">Thank you for your attention.</p>
         </div>
         <div class="footer">
