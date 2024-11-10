@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewsletterRequest;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 
@@ -15,13 +16,11 @@ class NewsletterController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function store(NewsletterRequest $request)
     {
-        $validated = $request->validate([
-            'email' => 'required|email|unique:newsletters,email'
+        $newsletter = Newsletter::create([
+            'email' => $request->email,
         ]);
-
-        $newsletter = Newsletter::create($validated);
 
         return response()->json($newsletter, 201);
     }

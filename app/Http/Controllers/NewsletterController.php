@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsletterRequest;
 use App\Mail\Newsletter as MailNewsletter;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
@@ -17,15 +18,13 @@ class NewsletterController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function store(NewsletterRequest $request)
     {
-        $validated = $request->validate([
-            'email' => 'required|email|unique:newsletters,email'
+        Newsletter::create([
+            'email' => $request->email,
         ]);
 
-        Newsletter::create($validated);
-
-        Mail::to($validated['email'])->send(new MailNewsletter());
+        Mail::to($request->email)->send(new MailNewsletter());
 
         return redirect()->back()->with('message', 'You have been subscribed to our newsletter.');
     }

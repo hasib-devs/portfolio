@@ -52,7 +52,7 @@ const Blog = () => {
                                 type="email"
                                 name="email"
                                 className={classNames(
-                                    "px-3 py-2 border border-primary rounded",
+                                    "px-3 py-2 border border-primary rounded w-72",
                                     {
                                         "border-red-500": errors.email,
                                     }
@@ -66,7 +66,7 @@ const Blog = () => {
                             />
 
                             {errors.email && (
-                                <p className="text-red-500 text-sm text-left">
+                                <p className="text-red-500 text-sm text-left mt-1">
                                     {errors.email}
                                 </p>
                             )}
