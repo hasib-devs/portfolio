@@ -12,6 +12,10 @@
             padding: 20px;
         }
 
+        img {
+            max-width: 100%;
+        }
+
         .header {
             text-align: center;
             padding: 20px 0;
@@ -21,7 +25,9 @@
         }
 
         .logo {
-            margin-bottom: 16px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .content {
@@ -61,7 +67,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="/api/placeholder/120/60" alt="Your Logo" />
+            <img src="{{ asset('images/hasib-dev.svg') }}" alt="Your Logo" />
         </div>
         <h1>Welcome to Our Newsletter!</h1>
     </div>
