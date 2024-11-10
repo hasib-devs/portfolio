@@ -23,8 +23,6 @@ class NewsletterController extends Controller
 
         Newsletter::create($validated);
 
-        sleep(2);
-
         return redirect()->back()->with('success', 'You have been subscribed to our newsletter.');
     }
 }
