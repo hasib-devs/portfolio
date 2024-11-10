@@ -8,6 +8,7 @@ Route::redirect("/", "/portfolio");
 Route::prefix('portfolio')->group(function () {
     Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::get('/resume', [PortfolioController::class, 'resume'])->name('portfolio.resume');
+    Route::get('/resume/download', [PortfolioController::class, 'downloadResume'])->name('portfolio.resume.download');
     Route::get('/blog', [PortfolioController::class, 'blog'])->name('portfolio.blog');
     Route::get('/contact', [PortfolioController::class, 'contact'])->name('portfolio.contact');
     Route::post('/contact', [PortfolioController::class, 'sendContact'])->name('portfolio.sendContact');

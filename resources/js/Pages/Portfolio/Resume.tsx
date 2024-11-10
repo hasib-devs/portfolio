@@ -21,14 +21,23 @@ const Resume = () => {
             <div>
                 <div className="text-center p-10 bg-gray-10 dark:bg-black">
                     <h2 className="text-2xl mb-6">Online Resume</h2>
-                    <a
-                        href="/Hasibur-Rahman-cv.pdf"
-                        target="_blank"
-                        className="px-5 py-2 rounded my-1 inline-flex items-center text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
-                    >
-                        <FaFilePdf className="mr-2" />
-                        Download PDF
-                    </a>
+                    <div className="flex items-center justify-center gap-1">
+                        <a
+                            href="/files/Hasibur-Rahman.pdf"
+                            target="_blank"
+                            className="px-5 py-2 rounded my-1 inline-flex items-center text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                        >
+                            <FaFilePdf className="mr-2" />
+                            View Online
+                        </a>
+                        <a
+                            href="/portfolio/resume/download"
+                            className="px-5 py-2 rounded my-1 inline-flex items-center text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                        >
+                            <FaFilePdf className="mr-2" />
+                            Download PDF
+                        </a>
+                    </div>
                 </div>
 
                 {/* <!-- Resume --> */}

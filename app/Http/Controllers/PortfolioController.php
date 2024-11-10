@@ -61,4 +61,17 @@ class PortfolioController extends Controller
             ->back()
             ->with("message", "Thank you for your message. We will get back to you soon!");
     }
+
+
+    /**
+     * Download the resume from public folder.
+     */
+    public function downloadResume()
+    {
+        $fileName = "Hasibur-Rahman.pdf";
+        $file = public_path("files/" . $fileName);
+        $headers = ["Content-Type: application/pdf"];
+
+        return response()->download($file, $fileName, $headers);
+    }
 }

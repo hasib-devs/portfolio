@@ -60,14 +60,14 @@ const AboutSection = () => {
                     <div className="mt-10 flex gap-3 items-center">
                         <Link
                             className="px-5  items-center py-2 rounded inline-flex text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
-                            href="/portfolio"
+                            href="/portfolio/contact"
                         >
                             <FaArrowCircleRight className="mr-2" />
-                            <span>View Portfolio</span>
+                            <span>Contact me</span>
                         </Link>
                         <Link
                             className="px-5 py-2 rounded items-center inline-flex text-white bg-gray-700 hover:bg-gray-800 transition-colors duration-300"
-                            href="/resume"
+                            href="/portfolio/resume"
                         >
                             <FaFileAlt className="mr-2" />
                             <span>View Resume</span>
