@@ -4,31 +4,14 @@ use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get("/", function () {
-    return to_route("portfolio.index");
+Route::redirect("/", "/portfolio");
+Route::prefix('portfolio')->group(function () {
+    Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
+    Route::get('/resume', [PortfolioController::class, 'resume'])->name('portfolio.resume');
+    Route::get('/blog', [PortfolioController::class, 'blog'])->name('portfolio.blog');
+    Route::get('/contact', [PortfolioController::class, 'contact'])->name('portfolio.contact');
+    Route::post('/contact', [PortfolioController::class, 'sendContact'])->name('portfolio.sendContact');
 });
-
-Route::group(["prefix" => "portfolio"], function () {
-    Route::get("/", [PortfolioController::class, "index"])->name("portfolio.index");
-    Route::get("/resume", [PortfolioController::class, "resume"])->name("portfolio.resume");
-    Route::get("/blog", [PortfolioController::class, "blog"])->name("portfolio.blog");
-    Route::get("/contact", [PortfolioController::class, "contact"])->name("portfolio.contact");
-    Route::post("/contact", [PortfolioController::class, "sendContact"])->name("portfolio.sendContact");
-});
-
-// Route::resource("/portfolio", PortfolioController::class)->only(["index"]);
-
-// Route::get("/", function () {
-//     return Inertia::render("Home");
-// });
-
-// Route::get("/resume", function () {
-//     return Inertia::render("Resume");
-// });
-
-// Route::resource("/blog", BlogController::class);
-
-// Route::resource("/contact", ContactController::class)->only(["index", "store"]);
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
