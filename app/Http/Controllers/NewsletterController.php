@@ -20,6 +20,17 @@ class NewsletterController extends Controller
 
     public function store(NewsletterRequest $request)
     {
+        $newsletter = Newsletter::find($request->email);
+
+        if ($newsletter && !$newsletter->is_subscribed) {
+            $newsletter->is_subscribed = true;
+            $newsletter->save();
+
+            Mail::to($request->email)->send(new MailNewsletter());
+            return redirect()->back()->with('message', 'You have been subscribed to our newsletter.');
+        }
+
+
         Newsletter::create([
             'email' => $request->email,
         ]);

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class NewsletterRequest extends FormRequest
 {
@@ -22,7 +23,7 @@ class NewsletterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'email', 'max:255', 'unique:newsletters,email'],
+            'email' => ['required', 'email', 'max:255', Rule::unique('newsletters')->where('is_subscribed', true)],
         ];
     }
 

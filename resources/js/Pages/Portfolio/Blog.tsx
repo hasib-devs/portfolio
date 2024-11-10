@@ -7,7 +7,7 @@ import { FaArrowCircleRight, FaLongArrowAltRight } from "react-icons/fa";
 
 const Blog = () => {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: "",
+        email: "info@hasib.dev",
     });
 
     const subscribe: FormEventHandler = (e) => {
