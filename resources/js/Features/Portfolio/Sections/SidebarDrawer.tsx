@@ -85,7 +85,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
 
             <nav className="flex flex-col text-gray-100">
                 <Link
-                    href="/"
+                    href="/portfolio"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">
@@ -105,7 +105,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
                 </Link> */}
 
                 <Link
-                    href="/resume"
+                    href="/portfolio/resume"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">
@@ -115,7 +115,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
                 </Link>
 
                 <Link
-                    href="/blog"
+                    href="/portfolio/blog"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">
@@ -125,7 +125,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
                 </Link>
 
                 <Link
-                    href="/contact"
+                    href="/portfolio/contact"
                     className="p-1 mb-1 hover:text-primary-dark transition-colors duration-300"
                 >
                     <span className="inline-block w-8 text-center">
