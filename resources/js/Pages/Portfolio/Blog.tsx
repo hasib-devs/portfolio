@@ -1,9 +1,9 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
+import { classNames, Toast } from "@/Utils";
 import { Head, Link, useForm } from "@inertiajs/react";
 import { FormEventHandler, ReactNode } from "react";
 import { FaArrowCircleRight, FaLongArrowAltRight } from "react-icons/fa";
-import { toast, Flip } from "react-toastify";
 
 const Blog = () => {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -12,11 +12,17 @@ const Blog = () => {
 
     const subscribe: FormEventHandler = (e) => {
         e.preventDefault();
+
+        const toast = new Toast("Subscribing...");
+
         post(route("newsletter.store"), {
             onSuccess: () => {
-                reset("email");
+                toast.success("Thank you for subscribing.");
+                reset();
             },
-            onError: (errors) => {},
+            onError: () => {
+                toast.error("Failed to subscribe. Please try again.");
+            },
         });
     };
 
@@ -39,19 +45,37 @@ const Blog = () => {
 
                     <form
                         onSubmit={subscribe}
-                        className="mt-10 flex gap-1 justify-center items-center"
+                        className="mt-10 flex gap-1 justify-center items-start"
                     >
-                        <input
-                            type="email"
-                            name="email"
-                            className="px-3 py-2 border border-primary rounded"
-                            placeholder="Enter Email"
-                            value={data.email}
-                            onChange={(e) => setData("email", e.target.value)}
-                        />
+                        <div>
+                            <input
+                                type="email"
+                                name="email"
+                                className={classNames(
+                                    "px-3 py-2 border border-primary rounded",
+                                    {
+                                        "border-red-500": errors.email,
+                                    }
+                                )}
+                                placeholder="Enter Email"
+                                value={data.email}
+                                required
+                                onChange={(e) =>
+                                    setData("email", e.target.value)
+                                }
+                            />
+
+                            {errors.email && (
+                                <p className="text-red-500 text-sm text-left">
+                                    {errors.email}
+                                </p>
+                            )}
+                        </div>
+
                         <button
                             type="submit"
-                            className="px-5 py-2 rounded my-1 inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                            className="px-5 py-2 rounded inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                            disabled={processing}
                         >
                             Subscribe
                         </button>

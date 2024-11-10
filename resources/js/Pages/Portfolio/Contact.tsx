@@ -1,11 +1,10 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
-import { classNames } from "@/Utils";
+import { classNames, Toast } from "@/Utils";
 import { Head, useForm } from "@inertiajs/react";
 import { FormEventHandler, ReactNode } from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF, FaStackOverflow, FaTwitter } from "react-icons/fa6";
-import { toast, Flip } from "react-toastify";
 
 const Contact = () => {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -17,34 +16,14 @@ const Contact = () => {
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
 
-        const toastId = toast.loading("Sending message...", {
-            position: "bottom-right",
-            closeButton: true,
-            draggable: true,
-            hideProgressBar: true,
-            transition: Flip,
-        });
+        const toast = new Toast("Sending message...");
         post(route("portfolio.sendContact"), {
             onSuccess: () => {
-                toast.update(toastId, {
-                    render: "Thank you for your message. I will get back to you soon.",
-                    type: "success",
-                    isLoading: false,
-                    autoClose: 3000,
-                    hideProgressBar: true,
-                    transition: Flip,
-                });
+                toast.success("Message sent successfully.");
                 reset("message");
             },
             onError: (errors) => {
-                toast.update(toastId, {
-                    render: "Failed to send message. Please try again.",
-                    type: "error",
-                    isLoading: false,
-                    autoClose: 3000,
-                    hideProgressBar: true,
-                    transition: Flip,
-                });
+                toast.error("Failed to send message. Please try again.");
             },
         });
     };

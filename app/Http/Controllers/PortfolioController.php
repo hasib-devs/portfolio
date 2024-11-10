@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
@@ -45,17 +46,13 @@ class PortfolioController extends Controller
     /**
      * send the contact form.
      */
-    public function sendContact(Request $request)
+    public function sendContact(ContactRequest $request)
     {
-        $request->validate([
-            "name" => "required",
-            "email" => "required|email",
-            "message" => "required",
-        ]);
-
-        // send email
-        Mail::to(config("mail.from.address"))
-            ->send(new ContactMail($request->all()));
+        Mail::to(config('mail.from.address'))->send(new ContactMail([
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ]));
 
         return redirect()
             ->back()
