@@ -1,9 +1,88 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
+import { Link } from "@inertiajs/react";
 import { ReactNode } from "react";
+import { FaArrowCircleRight, FaLongArrowAltRight } from "react-icons/fa";
 
 const Blog = () => {
-    return <div>Blog</div>;
+    return (
+        <div>
+            {/* <!-- Header --> */}
+            <div className="text-center p-10 bg-gray-10 dark:bg-gray-800">
+                <h2 className="text-3xl">
+                    A Blog About Software Development And Life
+                </h2>
+                <p className="mt-1">
+                    Welcome to my blog. Subscribe and get my latest blog post in
+                    your inbox.
+                </p>
+
+                <form className="mt-10 flex gap-1 justify-center items-center">
+                    <input
+                        type="email"
+                        name="email"
+                        className="px-3 py-2 border border-primary rounded"
+                        placeholder="Enter Email"
+                    />
+                    <button
+                        type="submit"
+                        className="px-5 py-2 rounded my-1 inline-block text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                    >
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+
+            {/* <!-- Main Content --> */}
+            <div className="p-10">
+                <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4 mt-10">
+                    <div
+                        v-for="item in 6"
+                        className="bg-gray-10 dark:bg-gray-800 transition-colors duration-300"
+                    >
+                        <div>
+                            <img
+                                src="/images/blog-post-thumb-card-1.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div className="p-4">
+                            <h3 className="text-xl">
+                                Top 3 JavaScript Frameworks
+                            </h3>
+                            <p className="mb-5 mt-3 text-sm">
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit. Aenean commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis parturient...
+                            </p>
+
+                            <button className="text-primary flex items-center">
+                                <span>Read More</span>
+                                {/* <font-awesome-icon :icon="['fas', 'long-arrow-alt-right']" class="ml-2"></font-awesome-icon> */}
+                                <FaLongArrowAltRight className="ml-2" />
+                            </button>
+
+                            <p className="mt-8 text-xs text-gray-500">
+                                Published 2 days ago
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-center mt-14">
+                    <Link
+                        className="px-5 py-2 rounded inline-flex items-center text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+                        href="/blog"
+                    >
+                        {/* <font-awesome-icon class="mr-2" :icon="['fas', 'arrow-circle-right']"></font-awesome-icon> View More */}
+                        <FaArrowCircleRight className="mr-2" />
+                        View More
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 Blog.layout = (page: ReactNode) => (

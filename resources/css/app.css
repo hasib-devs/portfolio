@@ -45,3 +45,9 @@
 #contact-section .social-icon {
     @apply p-2 mx-1 text-lg w-10 h-10 inline-block text-green-600 text-center hover:text-green-800 transition-colors duration-300;
 }
+
+#resume-container {
+    max-width: 1140px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    @apply mx-auto p-8;
+}
