@@ -17,7 +17,6 @@ createInertiaApp({
             import.meta.glob("./Pages/**/*.tsx")
         ),
     setup({ el, App, props }) {
-        console.log(import.meta.env);
         if (import.meta.env.SSR) {
             hydrateRoot(el, <App {...props} />);
             return;
