@@ -22,6 +22,12 @@
 
 <body class="font-sans antialiased">
     @inertia
+
+
+    {{-- Show PHP version --}}
+    <p>
+        PHP version: {{ phpversion() }}
+    </p>
 </body>
 
 </html>
