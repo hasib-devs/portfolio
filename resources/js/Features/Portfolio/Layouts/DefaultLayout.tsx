@@ -2,6 +2,7 @@ import { classNames } from "@/Utils";
 import React, { FC, useState } from "react";
 import SidebarDrawer from "../Sections/SidebarDrawer";
 import { usePortfolio } from "../Hooks/contexts";
+import Footer from "../Sections/Footer";
 
 type Props = {
     children: React.ReactNode;
@@ -19,14 +20,6 @@ const DefaultLayout: FC<Props> = ({ children }) => {
                 {/* Sidebar */}
                 <SidebarDrawer />
 
-                {/* Overlay */}
-                {isSidebarOpen && (
-                    <div
-                        onClick={() => setIsSidebarOpen(false)}
-                        className="bg-gray-900 bg-opacity-90 fixed w-screen h-screen lg:hidden"
-                    ></div>
-                )}
-
                 <main className="main-content overflow-y-auto custom-scrollbar">
                     <div className="lg:hidden py-3 px-6 bg-primary dark:bg-navy flex items-center text-white">
                         <button
@@ -42,15 +35,7 @@ const DefaultLayout: FC<Props> = ({ children }) => {
 
                     {children}
 
-                    <footer className="p-6">
-                        <p className="text-center">
-                            {" "}
-                            Template Copyright ©{" "}
-                            <span className="text-primary">
-                                3rd Wave Media
-                            </span>{" "}
-                        </p>
-                    </footer>
+                    <Footer />
                 </main>
             </div>
         </>
