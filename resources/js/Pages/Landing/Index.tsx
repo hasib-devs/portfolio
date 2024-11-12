@@ -1,3 +1,5 @@
+import { Provider } from "@/Contexts/global-context";
+import DefaultLayout from "@/Features/Landing/Layouts/DefaultLayout";
 import { Head } from "@inertiajs/react";
 import React from "react";
 
@@ -9,9 +11,17 @@ const Landing = (props: Props) => {
             <Head>
                 <title>Home</title>
             </Head>
-            <div>Landing</div>
+            <div>
+                <p>Hasib</p>
+            </div>
         </>
     );
 };
+
+Landing.layout = (page: React.ReactNode) => (
+    <Provider>
+        <DefaultLayout>{page}</DefaultLayout>
+    </Provider>
+);
 
 export default Landing;

@@ -3,13 +3,15 @@ import React, { FC, useState } from "react";
 import SidebarDrawer from "../Sections/SidebarDrawer";
 import { usePortfolio } from "../Hooks/contexts";
 import Footer from "../Sections/Footer";
+import { useGlobalContext } from "@/Hooks/contexts";
 
 type Props = {
     children: React.ReactNode;
 };
 
 const DefaultLayout: FC<Props> = ({ children }) => {
-    const { isDarkMode, isSidebarOpen, setIsSidebarOpen } = usePortfolio();
+    const { isSidebarOpen, setIsSidebarOpen } = usePortfolio();
+    const { isDarkMode } = useGlobalContext();
     return (
         <>
             <div

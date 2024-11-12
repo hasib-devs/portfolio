@@ -1,8 +1,7 @@
+import { Provider } from "@/Contexts/global-context";
 import { createContext, FC, useState } from "react";
 
 type PortfolioContextType = {
-    isDarkMode: boolean;
-    toggleDarkMode: () => void;
     isSidebarOpen: boolean;
     setIsSidebarOpen: (value: boolean) => void;
 };
@@ -19,25 +18,19 @@ export const PortfolioProvider: FC<PortfolioProviderProps> = ({
     children,
     value,
 }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    function toggleDarkMode() {
-        setIsDarkMode(!isDarkMode);
-        localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
-    }
-
     const contextValue: PortfolioContextType = {
-        isDarkMode,
-        toggleDarkMode,
         isSidebarOpen,
         setIsSidebarOpen,
         ...value,
     };
 
     return (
-        <PortfolioContext.Provider value={contextValue}>
-            {children}
-        </PortfolioContext.Provider>
+        <Provider>
+            <PortfolioContext.Provider value={contextValue}>
+                {children}
+            </PortfolioContext.Provider>
+        </Provider>
     );
 };

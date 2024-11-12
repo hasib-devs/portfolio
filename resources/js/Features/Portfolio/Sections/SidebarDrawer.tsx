@@ -14,12 +14,14 @@ import {
     FaAdjust,
 } from "react-icons/fa";
 import { usePortfolio } from "../Hooks/contexts";
+import { useGlobalContext } from "@/Hooks/contexts";
 
 type Props = {};
 
 const SidebarDrawer: FC<Props> = ({}) => {
-    const { isDarkMode, isSidebarOpen, setIsSidebarOpen, toggleDarkMode } =
-        usePortfolio();
+    const { isSidebarOpen, setIsSidebarOpen } = usePortfolio();
+
+    const { isDarkMode, toggleDarkMode } = useGlobalContext();
     return (
         <>
             <header
