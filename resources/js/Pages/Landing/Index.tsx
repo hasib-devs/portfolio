@@ -11,7 +11,7 @@ const Landing = (props: Props) => {
             <Head>
                 <title>Home</title>
             </Head>
-            <div>
+            <div className="container">
                 <p>Hasib</p>
             </div>
         </>

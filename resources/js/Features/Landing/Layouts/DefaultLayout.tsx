@@ -1,6 +1,8 @@
 import { useGlobalContext } from "@/Hooks/contexts";
 import { classNames } from "@/Utils";
 import React, { FC } from "react";
+import Header from "../Sections/Header";
+import Footer from "../Sections/Footer";
 
 type Props = {
     children: React.ReactNode;
@@ -15,7 +17,9 @@ const DefaultLayout: FC<Props> = ({ children }) => {
                     dark: isDarkMode,
                 })}
             >
+                <Header />
                 <main>{children}</main>
+                <Footer />
             </div>
         </>
     );

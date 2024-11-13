@@ -9,8 +9,6 @@ class LandingController extends Controller
 {
     public function index()
     {
-        // return Inertia::render('Landing/Index');
-        // return "Hello World";
         return Inertia::render("Landing/Index");
     }
 }

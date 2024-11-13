@@ -36,38 +36,53 @@
   "resources/js/Components/TextInput.tsx": [
     "/build/assets/TextInput-CfTqIySL.js"
   ],
+  "resources/js/Contexts/global-context.tsx": [
+    "/build/assets/index-CqKu5wzG.js"
+  ],
+  "resources/js/Features/Landing/Layouts/DefaultLayout.tsx": [
+    "/build/assets/Index-DXxBsD1j.js"
+  ],
+  "resources/js/Features/Landing/Sections/Footer.tsx": [
+    "/build/assets/Index-DXxBsD1j.js"
+  ],
+  "resources/js/Features/Landing/Sections/Header.tsx": [
+    "/build/assets/Index-DXxBsD1j.js"
+  ],
   "resources/js/Features/Portfolio/Contexts/portfolio-context.tsx": [
-    "/build/assets/DefaultLayout-DVuw4hcv.js"
+    "/build/assets/DefaultLayout-5Khwg96_.js"
   ],
   "resources/js/Features/Portfolio/Hooks/contexts.tsx": [
-    "/build/assets/DefaultLayout-DVuw4hcv.js"
+    "/build/assets/DefaultLayout-5Khwg96_.js"
   ],
   "resources/js/Features/Portfolio/Layouts/DefaultLayout.tsx": [
-    "/build/assets/DefaultLayout-DVuw4hcv.js"
+    "/build/assets/DefaultLayout-5Khwg96_.js"
   ],
   "resources/js/Features/Portfolio/Sections/AboutSection.tsx": [
-    "/build/assets/Index-imEvHbuQ.js"
+    "/build/assets/Index-P5Dt3lzX.js"
   ],
   "resources/js/Features/Portfolio/Sections/Footer.tsx": [
-    "/build/assets/DefaultLayout-DVuw4hcv.js"
+    "/build/assets/DefaultLayout-5Khwg96_.js"
   ],
   "resources/js/Features/Portfolio/Sections/OverviewSection.tsx": [
-    "/build/assets/Index-imEvHbuQ.js"
+    "/build/assets/Index-P5Dt3lzX.js"
   ],
   "resources/js/Features/Portfolio/Sections/SidebarDrawer.tsx": [
-    "/build/assets/DefaultLayout-DVuw4hcv.js"
+    "/build/assets/DefaultLayout-5Khwg96_.js"
+  ],
+  "resources/js/Hooks/contexts.tsx": [
+    "/build/assets/index-CqKu5wzG.js"
   ],
   "resources/js/Icons/FlutterIcon.tsx": [
-    "/build/assets/Index-imEvHbuQ.js"
+    "/build/assets/Index-P5Dt3lzX.js"
   ],
   "resources/js/Icons/GulpIcon.tsx": [
-    "/build/assets/Index-imEvHbuQ.js"
+    "/build/assets/Index-P5Dt3lzX.js"
   ],
   "resources/js/Icons/ScssIcon.tsx": [
-    "/build/assets/Index-imEvHbuQ.js"
+    "/build/assets/Index-P5Dt3lzX.js"
   ],
   "resources/js/Icons/WebpackIcon.tsx": [
-    "/build/assets/Index-imEvHbuQ.js"
+    "/build/assets/Index-P5Dt3lzX.js"
   ],
   "resources/js/Layouts/AuthenticatedLayout.tsx": [
     "/build/assets/AuthenticatedLayout-CRwQkLog.js"
@@ -97,19 +112,19 @@
     "/build/assets/Dashboard-CYbmP5BT.js"
   ],
   "resources/js/Pages/Landing/Index.tsx": [
-    "/build/assets/Index-C3PZn0rk.js"
+    "/build/assets/Index-DXxBsD1j.js"
   ],
   "resources/js/Pages/Portfolio/Blog.tsx": [
-    "/build/assets/Blog-DdBUXVin.js"
+    "/build/assets/Blog-CtlcVy6h.js"
   ],
   "resources/js/Pages/Portfolio/Contact.tsx": [
-    "/build/assets/Contact-CcPf6ZHp.js"
+    "/build/assets/Contact-Ctkk_ZMX.js"
   ],
   "resources/js/Pages/Portfolio/Index.tsx": [
-    "/build/assets/Index-imEvHbuQ.js"
+    "/build/assets/Index-P5Dt3lzX.js"
   ],
   "resources/js/Pages/Portfolio/Resume.tsx": [
-    "/build/assets/Resume-DK4vC1S3.js"
+    "/build/assets/Resume-BghbF1dR.js"
   ],
   "resources/js/Pages/Profile/Edit.tsx": [
     "/build/assets/Edit-DcieHa-C.js"
@@ -127,7 +142,7 @@
     "/build/assets/Welcome-By_mvvLX.js"
   ],
   "resources/js/Utils/index.tsx": [
-    "/build/assets/DefaultLayout-DVuw4hcv.js"
+    "/build/assets/index-CqKu5wzG.js"
   ],
   "resources/js/ssr.tsx": [],
   "vendor/tightenco/ziggy/dist/index.js": []

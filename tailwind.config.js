@@ -21,6 +21,25 @@ export default {
                 primary: '#059669',
                 'primary-dark': '#065F46',
                 'gray-10': '#fafafa'
+              },
+              screens: {
+               // Define breakpoints based on your layout needs
+                'xs': '480px',  // Extra small devices
+                'sm': '640px',  // Small devices
+                'md': '768px',  // Medium devices
+                'lg': '1024px', // Large devices
+                'xl': '1280px', // Extra large devices
+              },
+              container: {
+                center: true, // Center the container
+                padding: {
+                    DEFAULT: '1rem', // Default padding value
+                    lg: '4rem',      // Large devices
+                    xl: '5rem',      // Extra large devices
+                }
+              },
+              maxWidth: {
+                'small': '600px',  // Custom small max-width for narrow content
               }
         },
     },
