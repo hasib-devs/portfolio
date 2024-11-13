@@ -20,6 +20,8 @@ export default {
                 black: '#111821',
                 primary: '#059669',
                 'primary-dark': '#065F46',
+                secondary: 'rgb(19 154 225)',
+                'secondary-dark': 'rgb(19 154 225)',
                 'gray-10': '#fafafa'
               },
               screens: {

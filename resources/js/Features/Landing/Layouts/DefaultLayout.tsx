@@ -1,5 +1,5 @@
 import { useGlobalContext } from "@/Hooks/contexts";
-import { classNames } from "@/Utils";
+import { cn } from "@/Lib/Utils";
 import React, { FC } from "react";
 import Header from "../Sections/Header";
 import Footer from "../Sections/Footer";
@@ -13,7 +13,7 @@ const DefaultLayout: FC<Props> = ({ children }) => {
     return (
         <>
             <div
-                className={classNames({
+                className={cn({
                     dark: isDarkMode,
                 })}
             >

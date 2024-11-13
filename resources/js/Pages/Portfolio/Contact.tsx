@@ -1,6 +1,6 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
-import { classNames, Toast } from "@/Utils";
+import { cn, Toast } from "@/Lib/Utils";
 import { Head, useForm } from "@inertiajs/react";
 import { FormEventHandler, ReactNode } from "react";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -103,7 +103,7 @@ const Contact = () => {
                                     type="text"
                                     name="name"
                                     placeholder="Name"
-                                    className={classNames(
+                                    className={cn(
                                         "px-3 py-2 rounded w-full border border-gray-400",
                                         {
                                             "border-red-500": errors.name,
@@ -128,7 +128,7 @@ const Contact = () => {
                                     type="email"
                                     name="email"
                                     placeholder="Email"
-                                    className={classNames(
+                                    className={cn(
                                         "px-3 py-2 rounded border w-full border-gray-400",
                                         {
                                             "border-red-500": errors.email,
@@ -154,7 +154,7 @@ const Contact = () => {
                                 name="message"
                                 cols={30}
                                 rows={10}
-                                className={classNames(
+                                className={cn(
                                     "px-3 py-2 rounded border w-full border-gray-400",
                                     {
                                         "border-red-500": errors.message,

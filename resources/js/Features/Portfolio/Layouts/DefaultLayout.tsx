@@ -1,4 +1,4 @@
-import { classNames } from "@/Utils";
+import { cn } from "@/Lib/Utils";
 import React, { FC, useState } from "react";
 import SidebarDrawer from "../Sections/SidebarDrawer";
 import { usePortfolio } from "../Hooks/contexts";
@@ -15,7 +15,7 @@ const DefaultLayout: FC<Props> = ({ children }) => {
     return (
         <>
             <div
-                className={classNames("flex h-screen overflow-hidden", {
+                className={cn("flex h-screen overflow-hidden", {
                     dark: isDarkMode,
                 })}
             >

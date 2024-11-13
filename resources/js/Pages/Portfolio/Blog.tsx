@@ -1,6 +1,6 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
 import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
-import { classNames, Toast } from "@/Utils";
+import { cn, Toast } from "@/Lib/Utils";
 import { Head, Link, useForm } from "@inertiajs/react";
 import { FormEventHandler, ReactNode } from "react";
 import { FaArrowCircleRight, FaLongArrowAltRight } from "react-icons/fa";
@@ -51,7 +51,7 @@ const Blog = () => {
                             <input
                                 type="email"
                                 name="email"
-                                className={classNames(
+                                className={cn(
                                     "px-3 py-2 border border-primary rounded w-72",
                                     {
                                         "border-red-500": errors.email,

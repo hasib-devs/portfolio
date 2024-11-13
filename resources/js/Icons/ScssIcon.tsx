@@ -1,4 +1,4 @@
-import { classNames } from "@/Utils";
+import { cn } from "@/Lib/Utils";
 import { FC, SVGProps } from "react";
 
 interface Props extends SVGProps<SVGSVGElement> {}
@@ -6,7 +6,7 @@ interface Props extends SVGProps<SVGSVGElement> {}
 const ScssIcon: FC<Props> = ({ className }) => {
     return (
         <svg
-            className={classNames(className)}
+            className={cn(className)}
             aria-hidden="true"
             focusable="false"
             data-prefix="fab"

@@ -2,7 +2,7 @@ import clsx, { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { toast, Flip, Id } from "react-toastify";
 
-export function classNames(...inputs: ClassValue[]) {
+export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 

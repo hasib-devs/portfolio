@@ -1,4 +1,13 @@
+import { Button } from "@/Components/Shared/Button";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/Components/Shared/DropdownMenu";
 import { Link } from "@inertiajs/react";
+import { FaChevronDown } from "react-icons/fa6";
 
 const Header = () => {
     return (
@@ -14,14 +23,33 @@ const Header = () => {
                             />
                         </Link>
                     </div>
-                    <div className="flex-1 text-right">
-                        <Link href="/portfolio" className="mr-4">
-                            Portfolio
+                    <div className="flex-1 flex gap-1.5 items-center justify-end">
+                        <Link href="/portfolio">
+                            <Button variant={"secondary"} size="sm">
+                                PORTFOLIO
+                            </Button>
                         </Link>
-                        <Link href="/login" className="mr-4">
-                            Login
-                        </Link>
-                        <Link href="/register">Register</Link>
+
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="gray" size="sm">
+                                    <FaChevronDown />
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent className="w-56">
+                                <DropdownMenuGroup>
+                                    <DropdownMenuItem>
+                                        Item One
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        Item Two
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        Item Three
+                                    </DropdownMenuItem>
+                                </DropdownMenuGroup>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </div>
                 </div>
             </div>

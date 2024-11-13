@@ -1,4 +1,4 @@
-import { classNames } from "@/Utils";
+import { cn } from "@/Lib/Utils";
 import { Link } from "@inertiajs/react";
 import { FC } from "react";
 import {
@@ -26,7 +26,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
         <>
             <header
                 id="sidebar_header"
-                className={classNames(
+                className={cn(
                     "lg:relative lg:translate-x-0 absolute transform custom-scrollbar",
                     {
                         "-translate-x-full": !isSidebarOpen,
@@ -35,7 +35,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
             >
                 <div className="">
                     <h3 className="text-2xl text-center mt-2 mb-6 font-extrabold tracking-wide">
-                        Hasib
+                        <Link href="/">Hasib</Link>
                     </h3>
 
                     <div className="rounded-full overflow-hidden w-36 h-36 mx-auto">
@@ -155,7 +155,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
                         {/* <!-- Switch Container --> */}
                         <div
                             onClick={toggleDarkMode}
-                            className={classNames(
+                            className={cn(
                                 "w-14 h-7 flex items-center rounded-full mx-3 px-1",
                                 {
                                     "bg-primary": isDarkMode,
@@ -165,7 +165,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
                         >
                             {/* <!-- Switch --> */}
                             <div
-                                className={classNames(
+                                className={cn(
                                     "bg-white w-5 h-5 rounded-full shadow-md transform transition-transform duration-300",
                                     {
                                         "translate-x-7": isDarkMode,
