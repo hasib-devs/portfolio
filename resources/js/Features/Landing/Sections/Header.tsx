@@ -22,7 +22,7 @@ const Header = () => {
             <div className="container items-center py-4">
                 <div className="flex">
                     <div className="flex-1">
-                        <Link href="/" className="text-xl font-bold">
+                        <Link href="/">
                             <img
                                 src="/images/hasib-dev.svg"
                                 alt="Hasib.dev"

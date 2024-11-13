@@ -35,7 +35,7 @@ const SidebarDrawer: FC<Props> = ({}) => {
             >
                 <div className="">
                     <h3 className="text-2xl text-center mt-2 mb-6 font-extrabold tracking-wide">
-                        <Link href="/">Hasib</Link>
+                        <Link href="/">Hasib.dev</Link>
                     </h3>
 
                     <div className="rounded-full overflow-hidden w-36 h-36 mx-auto">
