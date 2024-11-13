@@ -7,7 +7,7 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const appName = import.meta.env.VITE_APP_NAME || "Hasib";
+const appName = import.meta.env.VITE_APP_NAME || "Hasib.dev";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

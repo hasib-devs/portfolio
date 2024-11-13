@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <Head>
-                <title>Home</title>
+                <title>About Me</title>
             </Head>
 
             <AboutSection />

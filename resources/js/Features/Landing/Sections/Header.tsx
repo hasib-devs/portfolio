@@ -4,15 +4,22 @@ import {
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
+    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/Components/Shared/DropdownMenu";
 import { Link } from "@inertiajs/react";
-import { FaChevronDown } from "react-icons/fa6";
+import { BiMessageAltDetail } from "react-icons/bi";
+import {
+    FaChevronDown,
+    FaGithub,
+    FaRegBell,
+    FaXTwitter,
+} from "react-icons/fa6";
 
 const Header = () => {
     return (
         <header>
-            <div className="container py-3">
+            <div className="container items-center py-4">
                 <div className="flex">
                     <div className="flex-1">
                         <Link href="/" className="text-xl font-bold">
@@ -36,16 +43,58 @@ const Header = () => {
                                     <FaChevronDown />
                                 </Button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56">
+                            <DropdownMenuContent
+                                align="end"
+                                sideOffset={13}
+                                className="w-48 font-semibold text-gray-600"
+                            >
                                 <DropdownMenuGroup>
-                                    <DropdownMenuItem>
-                                        Item One
+                                    <DropdownMenuItem
+                                        asChild
+                                        className="cursor-pointer"
+                                    >
+                                        <a href="mailto:info@hasib.dev">
+                                            <BiMessageAltDetail />
+                                            LEAVE FEEDBACK
+                                        </a>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        Item Two
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem
+                                        asChild
+                                        className="cursor-pointer"
+                                    >
+                                        <Link href="/changelog">
+                                            <FaRegBell />
+                                            CHANGELOG
+                                        </Link>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        Item Three
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem
+                                        asChild
+                                        className="cursor-pointer"
+                                    >
+                                        <a
+                                            href="http://github.com/hasib-devs"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaGithub />
+                                            GITHUB
+                                        </a>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem
+                                        asChild
+                                        className="cursor-pointer"
+                                    >
+                                        <a
+                                            href="http://twitter.com/Hasibur40252192"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaXTwitter />
+                                            TWITTER
+                                        </a>
                                     </DropdownMenuItem>
                                 </DropdownMenuGroup>
                             </DropdownMenuContent>

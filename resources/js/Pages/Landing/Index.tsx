@@ -9,7 +9,7 @@ const Landing = (props: Props) => {
     return (
         <>
             <Head>
-                <title>Home</title>
+                <title>Welcome</title>
             </Head>
             <div className="container">
                 <p>Hasib</p>
