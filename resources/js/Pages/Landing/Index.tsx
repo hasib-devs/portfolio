@@ -47,7 +47,7 @@ const Landing = (props: Props) => {
                         <Link href="/portfolio">
                             <Button
                                 size="lg"
-                                variant="secondary"
+                                // variant="secondary"
                                 className="uppercase"
                             >
                                 View Portfolio
