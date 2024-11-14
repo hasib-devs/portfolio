@@ -60,7 +60,7 @@ const Landing = (props: Props) => {
                 </div>
 
                 {/* Banner Section */}
-                <div className="py-16"></div>
+                {/* <div className="py-16"></div> */}
             </div>
         </>
     );

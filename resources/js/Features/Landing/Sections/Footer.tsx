@@ -3,8 +3,8 @@ import { GoDot } from "react-icons/go";
 
 const Footer = () => {
     return (
-        <div className="bg-white">
-            <div className="container py-12">
+        <footer className="bg-white mt-auto">
+            <div className="container py-8">
                 <div className="grid grid-cols-2 gap-2">
                     <div className="">
                         <Link href="/">
@@ -69,7 +69,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 };
 

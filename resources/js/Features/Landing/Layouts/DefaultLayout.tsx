@@ -13,12 +13,12 @@ const DefaultLayout: FC<Props> = ({ children }) => {
     return (
         <>
             <div
-                className={cn({
+                className={cn("flex flex-col min-h-dvh", {
                     dark: isDarkMode,
                 })}
             >
                 <Header />
-                <main>{children}</main>
+                <main className="mt-[71px]">{children}</main>
                 <Footer />
             </div>
         </>

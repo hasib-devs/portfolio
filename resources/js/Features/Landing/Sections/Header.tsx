@@ -18,7 +18,7 @@ import {
 
 const Header = () => {
     return (
-        <header>
+        <header className="bg-white fixed top-0 left-0 w-full">
             <div className="container items-center py-4">
                 <div className="flex">
                     <div className="flex-1">
