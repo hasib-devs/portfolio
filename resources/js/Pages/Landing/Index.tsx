@@ -17,14 +17,17 @@ const Landing = (props: Props) => {
                 {/* Hero section */}
                 <div className="py-20 flex text-center gap-4 flex-col justify-center items-center">
                     <h2 className="text-6xl font-bold">
-                        Create an amazing <br />
-                        <span className="text-secondary">Software</span> in
-                        minutes
+                        Turning <span className="text-secondary">Ideas</span>{" "}
+                        into <br /> Interactive Realities
                     </h2>
                     <p className="text-lg">
-                        Show off your skills, experience and projects. Generate
+                        <span className="text-[1.2rem]">
+                            From Vision to Code
+                        </span>{" "}
+                        <br /> Crafting Powerful Solutions for Web, Mobile, and
+                        Desktop
                         <br />
-                        markdown for your profile with just a few clicks!
+                        Solutions That Connect, Experiences That Last.
                     </p>
 
                     <div className="flex gap-3">
@@ -57,7 +60,7 @@ const Landing = (props: Props) => {
                 </div>
 
                 {/* Banner Section */}
-                <div className="py-20"></div>
+                <div className="py-16"></div>
             </div>
         </>
     );

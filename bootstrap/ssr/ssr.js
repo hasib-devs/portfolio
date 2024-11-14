@@ -339,7 +339,7 @@ function T(t4, e2, r2, n2) {
   const o2 = new N(t4, e2, r2, n2);
   return t4 ? o2.toString() : o2;
 }
-const appName = "Hasib";
+const appName = "Hasib.dev";
 createServer(
   (page) => createInertiaApp({
     page,
@@ -347,7 +347,7 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.tsx`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Auth/ConfirmPassword.tsx": () => import("./assets/ConfirmPassword-DcfuyxXd.js"), "./Pages/Auth/ForgotPassword.tsx": () => import("./assets/ForgotPassword-Dq7TZ572.js"), "./Pages/Auth/Login.tsx": () => import("./assets/Login-CFq8Iylx.js"), "./Pages/Auth/Register.tsx": () => import("./assets/Register-DlujxLTb.js"), "./Pages/Auth/ResetPassword.tsx": () => import("./assets/ResetPassword-CtlHHgo7.js"), "./Pages/Auth/VerifyEmail.tsx": () => import("./assets/VerifyEmail-CNL3OF64.js"), "./Pages/Dashboard.tsx": () => import("./assets/Dashboard-CYbmP5BT.js"), "./Pages/Landing/Index.tsx": () => import("./assets/Index-DXxBsD1j.js"), "./Pages/Portfolio/Blog.tsx": () => import("./assets/Blog-CtlcVy6h.js"), "./Pages/Portfolio/Contact.tsx": () => import("./assets/Contact-Ctkk_ZMX.js"), "./Pages/Portfolio/Index.tsx": () => import("./assets/Index-P5Dt3lzX.js"), "./Pages/Portfolio/Resume.tsx": () => import("./assets/Resume-BghbF1dR.js"), "./Pages/Profile/Edit.tsx": () => import("./assets/Edit-DcieHa-C.js"), "./Pages/Profile/Partials/DeleteUserForm.tsx": () => import("./assets/DeleteUserForm-CRyoRFsl.js"), "./Pages/Profile/Partials/UpdatePasswordForm.tsx": () => import("./assets/UpdatePasswordForm-5tiidph4.js"), "./Pages/Profile/Partials/UpdateProfileInformationForm.tsx": () => import("./assets/UpdateProfileInformationForm-DLc8-kkN.js"), "./Pages/Welcome.tsx": () => import("./assets/Welcome-By_mvvLX.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Auth/ConfirmPassword.tsx": () => import("./assets/ConfirmPassword-DcfuyxXd.js"), "./Pages/Auth/ForgotPassword.tsx": () => import("./assets/ForgotPassword-Dq7TZ572.js"), "./Pages/Auth/Login.tsx": () => import("./assets/Login-CFq8Iylx.js"), "./Pages/Auth/Register.tsx": () => import("./assets/Register-DlujxLTb.js"), "./Pages/Auth/ResetPassword.tsx": () => import("./assets/ResetPassword-CtlHHgo7.js"), "./Pages/Auth/VerifyEmail.tsx": () => import("./assets/VerifyEmail-CNL3OF64.js"), "./Pages/Dashboard.tsx": () => import("./assets/Dashboard-CYbmP5BT.js"), "./Pages/Landing/Index.tsx": () => import("./assets/Index-CkUQbaCB.js"), "./Pages/Portfolio/Blog.tsx": () => import("./assets/Blog-Z8hPm4q7.js"), "./Pages/Portfolio/Contact.tsx": () => import("./assets/Contact-DJm4pb-I.js"), "./Pages/Portfolio/Index.tsx": () => import("./assets/Index-snOXyh-n.js"), "./Pages/Portfolio/Resume.tsx": () => import("./assets/Resume-CTiN1X3R.js"), "./Pages/Profile/Edit.tsx": () => import("./assets/Edit-DcieHa-C.js"), "./Pages/Profile/Partials/DeleteUserForm.tsx": () => import("./assets/DeleteUserForm-CRyoRFsl.js"), "./Pages/Profile/Partials/UpdatePasswordForm.tsx": () => import("./assets/UpdatePasswordForm-5tiidph4.js"), "./Pages/Profile/Partials/UpdateProfileInformationForm.tsx": () => import("./assets/UpdateProfileInformationForm-DLc8-kkN.js"), "./Pages/Welcome.tsx": () => import("./assets/Welcome-By_mvvLX.js") })
     ),
     setup: ({ App, props }) => {
       global.route = (name, params, absolute) => T(name, params, absolute, {
