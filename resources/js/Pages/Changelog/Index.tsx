@@ -6,6 +6,79 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 
 const Changelog = () => {
+    const data = [
+        {
+            date: "March 3rd 2022",
+            author: "Hasibur Rahman",
+            changes: [
+                "Project initialized with basic setup.",
+                "Configured development environment with React and Node.js.",
+                "Set up version control with Git and GitHub.",
+            ],
+            status: "In Progress",
+        },
+        {
+            date: "April 1st 2022",
+            author: "Hasibur Rahman",
+            changes: [
+                "Implemented responsive design for the homepage.",
+                "Added navigation bar with smooth scrolling.",
+                "Optimized image assets for faster loading.",
+            ],
+            status: "In Progress",
+        },
+        {
+            date: "May 10th 2022",
+            author: "Hasibur Rahman",
+            changes: [
+                "User authentication system integrated with Firebase.",
+                "Added secure login and registration forms.",
+                "Enabled user sessions with persistent login.",
+            ],
+            status: "In Progress",
+        },
+        {
+            date: "June 20th 2022",
+            author: "Hasibur Rahman",
+            changes: [
+                "Developed blog feature for users to post articles.",
+                "Implemented rich text editor for creating blog posts.",
+                "Added functionality for liking and commenting on posts.",
+            ],
+            status: "In Review",
+        },
+        {
+            date: "July 14th 2022",
+            author: "Hasibur Rahman",
+            changes: [
+                "On-load animations added to homepage.",
+                "Created loading spinners for async data fetching.",
+                "Improved mobile responsiveness across all pages.",
+            ],
+            status: "New",
+        },
+        {
+            date: "August 5th 2022",
+            author: "Hasibur Rahman",
+            changes: [
+                "Added email notifications for new comments and likes.",
+                "Enhanced security by implementing rate limiting.",
+                "Refined error handling and form validation.",
+            ],
+            status: "Completed",
+        },
+        {
+            date: "September 10th 2022",
+            author: "Hasibur Rahman",
+            changes: [
+                "Launched the MVP version for early testing.",
+                "Collected user feedback on the initial release.",
+                "Prepared roadmap for future features and improvements.",
+            ],
+            status: "Launched",
+        },
+    ];
+
     return (
         <>
             <Head>
@@ -36,26 +109,40 @@ const Changelog = () => {
                 </div>
 
                 <div className="pt-5">
-                    <article className="flex gap-x-6 flex-col md:flex-row gap-y-3 border-b border-light-200 dark:border-dark-600 transition-all duration-150 ease-in-out pb-8 md:pb-0">
-                        <div className="w-full md:w-1/4 flex flex-col border-r-0 md:border-r border-light-200 dark:border-dark-600 py-0 md:py-6 transition-all duration-150 ease-in-out">
-                            <h3>July 14th 2022 </h3>
-                            <p className="text-sm mb-0">
-                                Posted by Hasibur Rahman
-                            </p>
-                        </div>
-                        <div className="w-full md:w-3/4 flex flex-col py-0 md:py-6 transition-all duration-150 ease-in-out">
-                            <div className="gap-y-4 flex flex-col mb-0"></div>
-                            <div className="flex flex-col items-start gap-y-1">
-                                {" "}
-                            </div>
-                            <div>
-                                <Button size="sm">New</Button>
-                            </div>
-                            <p className="text-sm mb-0 mt-1.5">
-                                On-load animations added to homepage.
-                            </p>
-                        </div>
-                    </article>
+                    {data.map((article) => {
+                        return (
+                            <article className="flex gap-x-6 flex-col md:flex-row gap-y-3 border-b pb-8 md:pb-0">
+                                <div className="w-full md:w-1/4 flex flex-col border-r-0 md:border-r py-0 md:py-6">
+                                    <h3 className="text-xl font-bold mb-1">
+                                        {article.date}{" "}
+                                    </h3>
+                                    <p className="text-sm mb-0 font-[500]">
+                                        Posted by{" "}
+                                        <span className="text-secondary underline">
+                                            {article.author}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div className="w-full md:w-3/4 flex flex-col py-0 md:py-6">
+                                    <div>
+                                        <Button size="sm">
+                                            {article.status}
+                                        </Button>
+                                    </div>
+                                    {article.changes.map((change, index) => {
+                                        return (
+                                            <p
+                                                className="text-sm mb-0 mt-1.5"
+                                                key={index}
+                                            >
+                                                {change}
+                                            </p>
+                                        );
+                                    })}
+                                </div>
+                            </article>
+                        );
+                    })}
                 </div>
             </div>
         </>
