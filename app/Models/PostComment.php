@@ -10,7 +10,7 @@ class PostComment extends Model
     /** @use HasFactory<\Database\Factories\PostCommentFactory> */
     use HasFactory;
 
-    protected $fillable = ['post_id', 'user_id', 'content'];
+    protected $fillable = ['post_id', 'user_id', 'content', 'parent_id'];
 
     public function post()
     {
@@ -20,5 +20,17 @@ class PostComment extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    // Define the parent comment relationship
+    public function parent()
+    {
+        return $this->belongsTo(PostComment::class, 'parent_id');
+    }
+
+    // Define the relationship for replies
+    public function replies()
+    {
+        return $this->hasMany(PostComment::class, 'parent_id')->with('replies');
     }
 }
