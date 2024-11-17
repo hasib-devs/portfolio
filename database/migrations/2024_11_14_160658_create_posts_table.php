@@ -18,6 +18,7 @@ return new class extends Migration
             $table->json('content');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamp('published_at')->nullable();
+            $table->string('status')->default('draft');
             $table->timestamps();
         });
     }

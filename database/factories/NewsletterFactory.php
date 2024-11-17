@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PostCategory>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Newsletter>
  */
-class PostCategoryFactory extends Factory
+class NewsletterFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,7 @@ class PostCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->word(),
-            'slug' => fake()->unique()->slug(),
+            'email' => fake()->unique()->safeEmail(),
         ];
     }
 }

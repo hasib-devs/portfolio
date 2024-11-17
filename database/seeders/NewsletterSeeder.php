@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\PostComment;
+use App\Models\Newsletter;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PostCommentSeeder extends Seeder
+class NewsletterSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        PostComment::factory()->count(10)->create();
+        Newsletter::factory()->count(10)->create();
     }
 }

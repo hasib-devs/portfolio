@@ -31,9 +31,12 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className="flex-1 flex gap-1.5 items-center justify-end">
-                        <Link href="/portfolio">
-                            <Button variant={"secondary"} size="sm">
-                                PORTFOLIO
+                        {/* <Link href="/portfolio">
+                            <Button size="sm">PORTFOLIO</Button>
+                        </Link> */}
+                        <Link href="/blog">
+                            <Button variant="secondary" size="sm">
+                                Blog
                             </Button>
                         </Link>
 
