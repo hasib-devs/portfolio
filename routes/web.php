@@ -20,6 +20,11 @@ Route::prefix('portfolio')->group(function () {
 
 Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
 
+// Route::prefix('blog')->group(function () {
+//     Route::get('/', [BlogController::class, 'index'])->name('blog.index');
+//     Route::get('/{slug}', [BlogController::class, 'show'])->name('blog.show');
+// });
+
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),

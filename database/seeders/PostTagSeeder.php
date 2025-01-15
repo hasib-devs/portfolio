@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\PostTag;
 use Illuminate\Database\Seeder;
 
 class PostTagSeeder extends Seeder
@@ -12,6 +12,6 @@ class PostTagSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        PostTag::factory(10)->create();
     }
 }
