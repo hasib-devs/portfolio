@@ -6,7 +6,6 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/changelog', [ChangelogController::class, 'index'])->name('changelog.index');
 
@@ -20,6 +19,7 @@ Route::prefix('portfolio')->group(function () {
 });
 
 Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
+
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),
@@ -40,4 +40,4 @@ Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsle
 // });
 
 // require __DIR__ . '/auth.php';
-require __DIR__ . '/api.php';
+// require __DIR__ . '/api.php';
