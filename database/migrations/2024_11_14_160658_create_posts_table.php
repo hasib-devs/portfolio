@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->json('content');
+            $table->string('status', 20)->default('draft');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->nullable()->constrained(table: 'post_categories')->onDelete('set null');
             $table->timestamp('published_at')->nullable();
-            $table->string('status')->default('draft');
             $table->timestamps();
         });
     }
