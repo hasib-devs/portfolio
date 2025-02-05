@@ -21,4 +21,9 @@ class Post extends Model
     {
         return $this->belongsTo(PostCategory::class);
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(related: PostTag::class, table: 'post_tag_pivot', foreignPivotKey: 'post_id', relatedPivotKey: 'tag_id');
+    }
 }
