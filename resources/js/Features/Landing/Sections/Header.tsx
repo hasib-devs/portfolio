@@ -34,11 +34,11 @@ const Header = () => {
                         {/* <Link href="/portfolio">
                             <Button size="sm">PORTFOLIO</Button>
                         </Link> */}
-                        <Link href="/blog">
+                        <a href="/blog">
                             <Button variant="secondary" size="sm">
                                 Blog
                             </Button>
-                        </Link>
+                        </a>
 
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>

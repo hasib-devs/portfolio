@@ -1,15 +1,15 @@
 import { cn } from "@/Lib/Utils";
 import React, { FC, useState } from "react";
-import SidebarDrawer from "../Sections/SidebarDrawer";
-import { usePortfolio } from "../Hooks/contexts";
-import Footer from "../Sections/Footer";
+import SidebarDrawer from "../Features/Portfolio/Sections/SidebarDrawer";
+import { usePortfolio } from "../Features/Portfolio/Hooks/contexts";
+import Footer from "../Features/Portfolio/Sections/Footer";
 import { useGlobalContext } from "@/Hooks/contexts";
 
 type Props = {
     children: React.ReactNode;
 };
 
-const DefaultLayout: FC<Props> = ({ children }) => {
+const PortfolioLayout: FC<Props> = ({ children }) => {
     const { isSidebarOpen, setIsSidebarOpen } = usePortfolio();
     const { isDarkMode } = useGlobalContext();
     return (
@@ -44,4 +44,4 @@ const DefaultLayout: FC<Props> = ({ children }) => {
     );
 };
 
-export default DefaultLayout;
+export default PortfolioLayout;

@@ -1,5 +1,5 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
-import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
+import PortfolioLayout from "@/Layouts/PortfolioLayout";
 import AboutSection from "@/Features/Portfolio/Sections/AboutSection";
 import OverviewSection from "@/Features/Portfolio/Sections/OverviewSection";
 import { Head } from "@inertiajs/react";
@@ -23,7 +23,7 @@ const Home = () => {
 
 Home.layout = (page: ReactNode) => (
     <PortfolioProvider>
-        <DefaultLayout>{page}</DefaultLayout>
+        <PortfolioLayout>{page}</PortfolioLayout>
     </PortfolioProvider>
 );
 

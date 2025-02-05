@@ -1,5 +1,5 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
-import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
+import PortfolioLayout from "@/Layouts/PortfolioLayout";
 import { cn, Toast } from "@/Lib/Utils";
 import { Head, Link, useForm } from "@inertiajs/react";
 import { FormEventHandler, ReactNode } from "react";
@@ -137,7 +137,7 @@ const Blog = () => {
 
 Blog.layout = (page: ReactNode) => (
     <PortfolioProvider>
-        <DefaultLayout>{page}</DefaultLayout>
+        <PortfolioLayout>{page}</PortfolioLayout>
     </PortfolioProvider>
 );
 

@@ -1,5 +1,5 @@
 import { PortfolioProvider } from "@/Features/Portfolio/Contexts/portfolio-context";
-import DefaultLayout from "@/Features/Portfolio/Layouts/DefaultLayout";
+import PortfolioLayout from "@/Layouts/PortfolioLayout";
 import { Head } from "@inertiajs/react";
 import { ReactNode } from "react";
 import {
@@ -484,7 +484,7 @@ const Resume = () => {
 
 Resume.layout = (page: ReactNode) => (
     <PortfolioProvider>
-        <DefaultLayout>{page}</DefaultLayout>
+        <PortfolioLayout>{page}</PortfolioLayout>
     </PortfolioProvider>
 );
 

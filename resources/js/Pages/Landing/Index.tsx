@@ -1,6 +1,6 @@
 import { Button } from "@/Components/Shared/Button";
 import { Provider } from "@/Contexts/global-context";
-import DefaultLayout from "@/Features/Landing/Layouts/DefaultLayout";
+import LandingLayout from "@/Layouts/LandingLayout";
 import { Head, Link } from "@inertiajs/react";
 import React from "react";
 import { CiHeart } from "react-icons/ci";
@@ -68,7 +68,7 @@ const Landing = (props: Props) => {
 
 Landing.layout = (page: React.ReactNode) => (
     <Provider>
-        <DefaultLayout>{page}</DefaultLayout>
+        <LandingLayout>{page}</LandingLayout>
     </Provider>
 );
 
